@@ -14,6 +14,18 @@
                 <form method="post" action="/employee" enctype="multipart/form-data">
                     @csrf
                     <div class="container-fluid">
+                        @if(session('successmsg'))
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-success alert-dismissible">
+                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                <p style="text-align: center">{{ session('successmsg') }}</p>
+                                            </div>
+
+                                             </div>
+                                        </div>
+                                    </div>
+                                @endif
                         <!-- SELECT2 EXAMPLE -->
                         <div class="card card-default">
                             <div class="card-header">
@@ -88,9 +100,14 @@
                                             <button type="submit" class="btn btn-primary">Add</button>
                                         </div>
                                     </div>
+                                    
+                                        
+                                    
                                     <!-- /.col -->
                                 </div>
                                 <!-- /.row -->
+                                
+
                             </div>
                             <!-- /.card-body -->
 
